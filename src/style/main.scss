@@ -55,6 +55,9 @@ body,html{
 }
 
 .prompt{
+  @media screen and (max-width: 768px){
+    display: none;
+  }
   color: white;
   display: inline-block;
   position: absolute;
@@ -63,6 +66,9 @@ body,html{
   transform: translate(-50%);
 }
 .arrow{
+  @media screen and (max-width: 768px){
+    display: none;
+  }
   position: absolute;
   top: 92%;
   left: 50%;
@@ -74,7 +80,11 @@ body,html{
 
 /* header */
 
+
 .header {
+  @media screen and (max-width: 768px){
+    border-bottom:none;
+  }
   background-color: rgba(0, 0, 0, 0.0);
   position: fixed;
   top: 0;
@@ -82,6 +92,7 @@ body,html{
   transform: translate(-50%);
   width: 90%;
   height: 7%;
+  min-height: 37px;
   border-bottom: 1px solid white;
   ul {
     position: absolute;
@@ -93,9 +104,14 @@ body,html{
     padding: 0;
     list-style: none;
     overflow: hidden;
+    max-width: 50%;
     background-color:  rgba(0, 0, 0, 0.0);
+
   }
   li{
+    @media screen and (max-width: 768px){
+      width: 100%;
+    }
     display: inline-block;
     a {
       color: white;
@@ -105,16 +121,6 @@ body,html{
       text-align: center;
     }
   }
-}
-
-
-
-.header .logo {
-  display: block;
-  float: left;
-  font-size: 2em;
-  padding: 10px 20px;
-  text-decoration: none;
 }
 
 
@@ -131,6 +137,7 @@ body,html{
   float: right;
   padding: 28px 20px;
   position: relative;
+  top: 20%;
   user-select: none;
 }
 
@@ -197,6 +204,7 @@ body,html{
   }
   .header li a {
     padding: 20px 30px;
+    display: block;
   }
   .header .menu {
     clear: none;
