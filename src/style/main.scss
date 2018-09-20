@@ -1,0 +1,209 @@
+
+*{
+  scroll-behavior: smooth;
+}
+body,html{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", Helvetica, sans-serif
+}
+.container{
+  height: 100%;
+}
+#c1{
+  background: url("../img/background-img.jpg") center;
+  background-size: cover;
+}
+
+#c2{
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+    padding: 0 0 0 0;
+    align-items: stretch;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 3% 0 3%;
+  .img{
+    @media screen and (max-width: 768px){
+      width: 100%;
+    }
+    flex-grow: 1;
+    height: 60%;
+    width: 50%;
+    background: url("../img/man.PNG") center;
+    background-size: cover;
+  }
+  .text{
+    @media screen and (max-width: 768px){
+      width: 100%;
+    }
+    margin-left: 2%;
+    flex-grow: 1;
+    width: 50%;
+    height: auto;
+    text-align: left;
+    p{
+      line-height: 220%;
+    }
+  }
+}
+
+.prompt{
+  color: white;
+  display: inline-block;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.arrow{
+  position: absolute;
+  top: 92%;
+  left: 50%;
+  transform: translate(-50%);
+  transform: rotate(90deg) ;
+  font-size: 350%;
+  color: white;
+}
+
+/* header */
+
+.header {
+  background-color: rgba(0, 0, 0, 0.0);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 90%;
+  height: 7%;
+  border-bottom: 1px solid white;
+  ul {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color:  rgba(0, 0, 0, 0.0);
+  }
+  li{
+    display: inline-block;
+    a {
+      color: white;
+      display: block;
+      padding: 18px 16px;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+}
+
+
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
